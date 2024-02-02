@@ -1,5 +1,5 @@
-username: paoloristori
-email: 286280@studenti.unimore.it
-password: progettoiot
+username: -
+email: -
+password: -
 
 sito: https://www.pythonanywhere.com/
