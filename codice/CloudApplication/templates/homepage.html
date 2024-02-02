@@ -1,0 +1,49 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="content-wrapper">
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <!-- Titolo -->
+        <h4 class="fw-bold py-3 mb-4">Homepage</h4>
+
+        <!-- DataTable -->
+        <form id="formPrediction" class="form-group m-4">
+            <div class="row">
+                <div class="col-12 col-md-3">
+                    <label for="data_ora" class="col-md-2 col-form-label">Datetime</label>
+                    <input class="form-control" type="datetime-local" id="data_ora">
+                </div>
+                <div class="col-12 col-md-4">
+                    <label for="product" class="col-md-2 col-form-label">Product</label>
+                    <select id="product" class="form-select" data-live-search="true">
+                        <option>Seleziona</option>
+
+                    </select>
+                </div>
+                <div class="col-12 col-md-4">
+                    <label for="location" class="col-md-2 col-form-label">Location</label>
+                    <select id="location" class="form-select" disabled>
+                        <option>Seleziona</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-1 align-self-end">
+                    <button type="submit" class="btn rounded-pill btn-primary" id="submitForm"><i
+                            class='bx bx-search-alt'></i></button>
+                </div>
+
+            </div>
+        </form>
+        <div class="card m-4">
+            <div class="card-header">
+                Map Example
+            </div>
+            <div class="card-body">
+                <div id="map" style="height:500px"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block library %}
+<script src="{{ url_for('static', filename='script/homepage.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,15 @@
+{
+  "users": [
+    {
+      "rfid_id":  "351952216",
+      "description": "Paolo Ristori"
+    },
+    {
+      "rfid_id":  "351952217",
+      "description": "Alessandro Pansera"
+    },{
+      "rfid_id":  "351952218",
+      "description": "Mattia Bertacchini"
+    }
+  ]
+}

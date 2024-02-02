@@ -1,0 +1,7 @@
+user: allePansera
+passwd: Pippo2015+
+ip: 0fa6e1e559514e559d63f7914d4afaea.s2.eu.hivemq.cloud
+port: 8883
+
+
+/ip_refs per trasmettere l'ip di un dev quando si connette

@@ -1,0 +1,59 @@
+{
+  "movements": [
+    {
+      "user_id": "351952216",
+      "user_description": "Paolo Ristori",
+      "shelf_id": "A0001",
+      "arcodart": "AA000AA",
+      "ardesart": "latte intero",
+      "qty": -1,
+      "datetime": "04/11/2023 15:15:54"
+    },
+    {
+      "user_id": "351952216",
+      "user_description": "Paolo Ristori",
+      "shelf_id": "A0001",
+      "arcodart": "AA000AA",
+      "ardesart": "latte intero",
+      "qty": -1,
+      "datetime": "04/11/2023 15:18:19"
+    },
+    {
+      "user_id": "351952217",
+      "user_description": "Alessandro Pansera",
+      "shelf_id": "B0002",
+      "arcodart": "AA000AD",
+      "ardesart": "Stracchino",
+      "qty": -1,
+      "datetime": "16/11/2023 14:44:19"
+    },
+    {
+      "user_id": "351952217",
+      "user_description": "Alessandro Pansera",
+      "shelf_id": "B0002",
+      "arcodart": "AA000AE",
+      "ardesart": "Gorgonzola",
+      "qty": -1,
+      "datetime": "16/11/2023 14:46:30"
+    },
+
+    {
+      "user_id": "351952216",
+      "user_description": "Mattia Bertacchini",
+      "shelf_id": "D0001",
+      "arcodart": "AA000AD",
+      "ardesart": "Stracchino",
+      "qty": -1,
+      "datetime": "17/11/2023 15:00:00"
+    },
+    {
+      "user_id": "351952216",
+      "user_description": "Mattia Bertacchini",
+      "shelf_id": "E0001",
+      "arcodart": "AA000CD",
+      "ardesart": "Passata di pomodoro",
+      "qty": -1,
+      "datetime": "08/10/2023 14:46:30"
+    }
+  ]
+}

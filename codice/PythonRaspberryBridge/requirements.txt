@@ -1,0 +1,8 @@
+paho-mqtt
+getmac
+requests
+opencv-python
+opencv-contrib-python
+urllib3
+tcping
+numpy

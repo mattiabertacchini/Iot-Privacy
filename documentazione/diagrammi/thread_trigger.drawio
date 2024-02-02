@@ -1,0 +1,81 @@
+<mxfile host="Electron" modified="2023-12-05T14:50:57.043Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.1 Chrome/112.0.5615.87 Electron/24.1.2 Safari/537.36" etag="guQx48MBWk-hegw_RSkr" version="21.2.1" type="device">
+  <diagram name="Pagina-1" id="uH--xadEmKN2jKGh-pJY">
+    <mxGraphModel dx="2590" dy="1535" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="CbZeHK5G1vHTjqcx2iB--3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CbZeHK5G1vHTjqcx2iB--1" target="CbZeHK5G1vHTjqcx2iB--2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CbZeHK5G1vHTjqcx2iB--1" value="&lt;font style=&quot;font-size: 27px;&quot;&gt;START&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="780" y="70" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CbZeHK5G1vHTjqcx2iB--5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CbZeHK5G1vHTjqcx2iB--2" target="CbZeHK5G1vHTjqcx2iB--4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CbZeHK5G1vHTjqcx2iB--2" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;True&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="800" y="220" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CbZeHK5G1vHTjqcx2iB--7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CbZeHK5G1vHTjqcx2iB--4" target="CbZeHK5G1vHTjqcx2iB--6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CbZeHK5G1vHTjqcx2iB--4" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 25px;&quot;&gt;Check if stored devices are active. Remove inactive ones and sync informations with cloud.&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="340" width="340" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="CbZeHK5G1vHTjqcx2iB--9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CbZeHK5G1vHTjqcx2iB--6" target="CbZeHK5G1vHTjqcx2iB--8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CbZeHK5G1vHTjqcx2iB--6" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 25px;&quot;&gt;Get a list of Camera IP addresses and related RFID Tag reader.&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="510" width="340" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="CbZeHK5G1vHTjqcx2iB--10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CbZeHK5G1vHTjqcx2iB--8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="850" y="180" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1480" y="770" />
+              <mxPoint x="1480" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CbZeHK5G1vHTjqcx2iB--14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="CbZeHK5G1vHTjqcx2iB--8" target="CbZeHK5G1vHTjqcx2iB--13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CbZeHK5G1vHTjqcx2iB--8" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Thread runned for current IP&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="690" width="220" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="CbZeHK5G1vHTjqcx2iB--11" value="&lt;span style=&quot;font-size: 21px;&quot;&gt;YES&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1310" y="730" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CbZeHK5G1vHTjqcx2iB--12" value="&lt;span style=&quot;font-size: 21px;&quot;&gt;NO&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="990" y="730" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CbZeHK5G1vHTjqcx2iB--16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CbZeHK5G1vHTjqcx2iB--13">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="890" y="1080" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CbZeHK5G1vHTjqcx2iB--13" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 25px;&quot;&gt;Initialize a Thread which subscribe to a MQTT topic related to connected RFID Tag Reader. Save camera IP inside a list to prevent duplicate Threads.&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="720" y="810" width="340" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="CbZeHK5G1vHTjqcx2iB--24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CbZeHK5G1vHTjqcx2iB--18" target="CbZeHK5G1vHTjqcx2iB--22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CbZeHK5G1vHTjqcx2iB--18" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 25px;&quot;&gt;When a MQTT message is recevied initialize another Thread which receives, for a time window, frames from ESP 32 Camera.&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="720" y="1080" width="340" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="CbZeHK5G1vHTjqcx2iB--25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CbZeHK5G1vHTjqcx2iB--22">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="890" y="1030" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="580" y="1505" />
+              <mxPoint x="580" y="1030" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CbZeHK5G1vHTjqcx2iB--22" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 25px;&quot;&gt;For each frame, if a QrCode is detected, it&#39;s stored inside a buffer with related decoded information (arcodart, ardesart).&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 25px;&quot;&gt;When the buffer is full another thread is runned to publish all saved frames to the cloud for trajectory detection.&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="720" y="1360" width="340" height="290" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

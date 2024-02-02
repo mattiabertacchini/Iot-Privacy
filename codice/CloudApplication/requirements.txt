@@ -1,0 +1,6 @@
+gitpython
+pyzbar
+requests
+numpy
+imutils
+prophet
