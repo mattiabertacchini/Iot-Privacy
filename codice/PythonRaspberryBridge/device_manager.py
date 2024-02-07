@@ -1,6 +1,7 @@
 import json, cv2, urllib.request, threading, time, requests, atexit
 import paho.mqtt.client as mqtt_client
 import platform
+
 if platform.system() != "Darwin": from pyzbar import pyzbar
 from esp_camera_manager import *
 from datetime import datetime, timedelta
@@ -8,6 +9,7 @@ from getmac import get_mac_address as gma
 
 json_db_path = "devices.json"
 DEBUG = True
+
 
 def add_device(ip_string, type, id):
     """
@@ -24,8 +26,8 @@ def add_device(ip_string, type, id):
     # Publish to cloud connected device infos in order to keep updated the DT status
     web_data = {}
     prefix = "camera_" if type == "camera" else "rfid_"
-    web_data[prefix+"ip"] = ip_string
-    web_data[prefix+"status"] = 1
+    web_data[prefix + "ip"] = ip_string
+    web_data[prefix + "status"] = 1
     r = requests.post(URL, data=web_data)
 
     # Create dev if not existing
@@ -55,6 +57,7 @@ def add_device(ip_string, type, id):
         f = open(json_db_path, "w")
         json.dump(updated_json, f, indent=4)
         f.close()
+
 
 def add_last_rfid(ip_string, type, id, rfid):
     """
@@ -72,9 +75,9 @@ def add_last_rfid(ip_string, type, id, rfid):
     # Publish to cloud connected device infos in order to keep updated the DT status
     web_data = {}
     prefix = "camera_" if type == "camera" else "rfid_"
-    web_data[prefix+"ip"] = ip_string
-    web_data[prefix+"status"] = 1
-    web_data[prefix+"last_tag"] = rfid
+    web_data[prefix + "ip"] = ip_string
+    web_data[prefix + "status"] = 1
+    web_data[prefix + "last_tag"] = rfid
     r = requests.post(URL, data=web_data)
 
     # Create dev if not existing
@@ -104,6 +107,7 @@ def add_last_rfid(ip_string, type, id, rfid):
         f = open(json_db_path, "w")
         json.dump(updated_json, f, indent=4)
         f.close()
+
 
 def remove_device(ip_string, type):
     """
@@ -225,7 +229,6 @@ def __deprecated_streaming_capture(ip_address):
                 return
             # cv2.waitKey(10)
 
-
         cv2.destroyAllWindows()
 
     except Exception as e:
@@ -272,9 +275,9 @@ def rfid_tag_reader(camera_ip, rfid_ip, shelf_id, verbose=False, max_sec_validit
             print(f"Tag rcv: {rfid_tag}")
             add_last_rfid(rfid_ip, 'rfid', shelf_id, rfid_tag)
             t = threading.Thread(target=streaming_capture,
-                             args=(camera_ip, rfid_ip, shelf_id,
-                              datetime.now()+timedelta(0, max_sec_validity), rfid_tag)
-                             )
+                                 args=(camera_ip, rfid_ip, shelf_id,
+                                       datetime.now() + timedelta(0, max_sec_validity), rfid_tag)
+                                 )
             t.start()
 
         client.subscribe(topic)
@@ -293,7 +296,7 @@ def rfid_tag_reader(camera_ip, rfid_ip, shelf_id, verbose=False, max_sec_validit
     run()
 
 
-def streaming_capture(camera_ip, rfid_ip, shelf_id, max_time_available=datetime.now()+timedelta(0, 5), rfid_tag=None):
+def streaming_capture(camera_ip, rfid_ip, shelf_id, max_time_available=datetime.now() + timedelta(0, 5), rfid_tag=None):
     """
     Capture, until time is over, images from streaming camera to send online.
 
@@ -324,7 +327,7 @@ def streaming_capture(camera_ip, rfid_ip, shelf_id, max_time_available=datetime.
                         if len(buff) == buff_max_len:
                             # write text inside
                             text = "Data published"
-                            if DEBUG: cv2.putText(frame, text, (0, 0), cv2.FONT_HERSHEY_SIMPLEX,0.5, (0, 0, 255), 2)
+                            if DEBUG: cv2.putText(frame, text, (0, 0), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
                             if DEBUG: cv2.imshow("frame", frame)
                             # create a thread that publish data
                             t = threading.Thread(target=publish_frames_buff, args=(buff.copy(), camera_ip, rfid_ip, shelf_id, rfid_tag))
@@ -341,7 +344,7 @@ def streaming_capture(camera_ip, rfid_ip, shelf_id, max_time_available=datetime.
                             # extract the bounding box location of the barcode and draw the
                             # bounding box surrounding the barcode on the image
                             (x, y, w, h) = barcode.rect
-                            cv2.rectangle(frame, (x, y), (x + int(w/2), y + int(h/2)), (0, 128, 0), -1)
+                            cv2.rectangle(frame, (x, y), (x + int(w / 2), y + int(h / 2)), (0, 128, 0), -1)
                             # the barcode data is a bytes object so if we want to draw it on
                             # our output image we need to convert it to a string first
                             barcodeData = barcode.data.decode("utf-8")
@@ -356,7 +359,6 @@ def streaming_capture(camera_ip, rfid_ip, shelf_id, max_time_available=datetime.
                     key = cv2.waitKey(40)
                     if key == 27:
                         break
-
 
             cv2.destroyAllWindows()
             cap.release()
@@ -378,14 +380,14 @@ def publish_frames_buff(frame_buffer, camera_ip, rfid_ip, shelf_id, rfid_tag):
     URL = "https://paoloristori.eu.pythonanywhere.com/frame_processing"
     files = {}
     headers = {
-                #"Content-Type": "application/json",
-                "X-Camera-IP": camera_ip,
-                "X-RFID-IP": rfid_ip,
-                "X-Shelf-ID": shelf_id,
-                "X-Item-ID": frame_buffer[0]["content"]["arcodart"],
-                "X-Item-Description": frame_buffer[0]["content"]["ardesart"],
-                "X-RFID-Tag": rfid_tag
-               }
+        # "Content-Type": "application/json",
+        "X-Camera-IP": camera_ip,
+        "X-RFID-IP": rfid_ip,
+        "X-Shelf-ID": shelf_id,
+        "X-Item-ID": frame_buffer[0]["content"]["arcodart"],
+        "X-Item-Description": frame_buffer[0]["content"]["ardesart"],
+        "X-RFID-Tag": rfid_tag
+    }
     for cont, frame_dict in enumerate(frame_buffer):
         # image = np.asarray(bytearray(resp.read()), dtype="uint8")
         # frame = cv2.imdecode(image, cv2.IMREAD_COLOR)
@@ -394,7 +396,6 @@ def publish_frames_buff(frame_buffer, camera_ip, rfid_ip, shelf_id, rfid_tag):
         # files_metadata[f"img_{cont}.png"] = frame_dict["content"]
         files[f"img_{cont}.png"] = imdata
         # files_metadata.append(frame_dict)
-
 
     if DEBUG: print(f"Executing frames upload...")
     r = requests.post(URL, files=files, headers=headers)
@@ -407,7 +408,7 @@ def publish_frames_buff(frame_buffer, camera_ip, rfid_ip, shelf_id, rfid_tag):
     # exit(1)
 
 
-def streaming_capture_not_working(camera_ip, rfid_ip, shelf_id, max_time_available=datetime.now()+timedelta(0, 5), rfid_tag=None):
+def streaming_capture_not_working(camera_ip, rfid_ip, shelf_id, max_time_available=datetime.now() + timedelta(0, 5), rfid_tag=None):
     """
     Capture, until time is over, images from streaming camera to send online.
     Sends 20 frames each time until 5 sec aren't over.
@@ -475,23 +476,20 @@ def publish_frames_buff_not_working(frame_buffer, camera_ip, rfid_ip, shelf_id, 
     URL = "https://paoloristori.eu.pythonanywhere.com/frame_processing"
     files = {}
     headers = {
-                #"Content-Type": "application/json",
-                "X-Camera-IP": camera_ip,
-                "X-RFID-IP": rfid_ip,
-                "X-Shelf-ID": shelf_id,
-                "X-Item-ID": "DEPRECATED",
-                "X-Item-Description": "DEPRECATED",
-                "X-RFID-Tag": rfid_tag
-               }
+        # "Content-Type": "application/json",
+        "X-Camera-IP": camera_ip,
+        "X-RFID-IP": rfid_ip,
+        "X-Shelf-ID": shelf_id,
+        "X-Item-ID": "DEPRECATED",
+        "X-Item-Description": "DEPRECATED",
+        "X-RFID-Tag": rfid_tag
+    }
 
     for cont, frame_dict in enumerate(frame_buffer):
         _, imdata = cv2.imencode('.PNG', frame_dict["img"])
         files[f"img_{cont}.png"] = imdata
 
-
     if DEBUG: print(f"Executing frames upload...")
     r = requests.post(URL, files=files, headers=headers)
     if DEBUG: print(f"Camera IP: {camera_ip}\n{r.content.decode()}")
     time.sleep(2)
-
-
